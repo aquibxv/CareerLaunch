@@ -1,0 +1,82 @@
+body {
+    background-color: rgba(238, 238, 238, 0.945);
+}
+
+#showcase-inner {
+  background: #46d2d2;
+  position: relative;
+  overflow: hidden;
+  min-height: 200px; 
+  color : #fff;
+}
+
+ div.card-container {
+    border: 1px solid #ccc;
+    background: #fff;
+    box-sizing: border-box;
+    margin-top: 15px;
+  }
+
+  div.card-head {
+    border-bottom: 2px solid #ccc;
+    padding:15px;
+  }
+
+  div.job-card {
+    border-left: 5px solid #fff;
+    border-bottom:1px solid #ccc;
+    padding:15px;
+  }
+
+  div.job-card:hover {
+    border-left: 5px solid #46d2d2;
+  }
+
+  div.job-card-button {
+    margin-top: 15px;
+  }
+
+  div.job-item h6 {
+    margin-right: 10px;
+    float: left;
+    display: inline-block;
+  }
+
+  /* About_4 */
+div.about_4{
+	display: grid;
+	grid-template-columns: repeat(11,1fr);
+	grid-gap: 0.8em;
+	background: #bbb;
+	padding:50px;
+}
+div.about_4 h3{
+	border-right: 2px solid #333;
+	padding-right: 20px;
+	margin-right: 20px;
+}
+/* Testimonials */
+
+.testimonial-container {
+	border-radius: 5px;
+	margin:20px;
+	padding:20px;
+	background: #fff;
+}
+
+.testimonial-box {
+	width: 70%;
+	margin: auto;
+}
+
+
+.testimonial {
+	width: 70%;
+	margin: auto;
+	text-align: center;;
+}
+
+.testimonial img {
+	border-radius: 50%;
+	width: 90px;
+}

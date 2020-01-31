@@ -1,0 +1,94 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Post Job</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!--Scripts-->
+    
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="{% static 'CSS/bootstrap.css' %}">
+    <!--Stylesheet-->
+    <link rel="stylesheet" type="text/css" href="{% static 'CSS/index_stylesheet.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'CSS/JobPost_stylesheet.css' %}">
+
+</head>
+<body>
+    
+    <div class="container" id="body">
+      <!--Heading and block-->
+      <div class="job-head-section">
+          <div>
+              <span class="back-btn"><a href="{% url 'recruiter_dashboard'%}"><img src="Images/back.png" alt="back"></a></span>
+          </div>
+          <h4 class="display-3" style="color: blue; font-size: 3rem;">Post a Job</h4>
+          <hr/>
+      </div>
+
+      <!--Form for collecting project data-->
+      <!-- Alerts -->
+      {% include 'partials/_alerts.html' %}
+      <form class="{% url 'job_post' %}" autocomplete="off" method="POST">
+        {% csrf_token %}
+          <!--Job Title -->
+          <div class="form-group mb-4">
+                  <label for="job_title">
+                    <h5 class="job-field">Job Title</h5> <span id="required-field">*</span>
+                  </label>
+                  <input type="text" class="form-control" id="job_title" name="job_title" placeholder="Enter Job title" style="width:100%" required>
+          </div>
+
+          <!--Company-->
+          <div class="form-group mb-4">
+              <label for="company-name">
+                <h5 class="job-field">Company</h5> <span id="required-field">*</span>
+              </label>
+              <input type="text" class="form-control" id="company-name" name="company-name" placeholder="Enter company name" style="width:100%" required>
+          </div>
+
+          <!--Salary-->
+          <div class="form-group mb-4">
+              <label for="salary">
+                <h5 class="job-field">Offered salary</h5> <span id="required-field">*</span>
+              </label>
+              <input type="text" class="form-control" id="salary" name="salary" placeholder="Enter salary" style="width:100%" required>
+          </div>
+
+          <!--Location-->
+          <div class="form-group mb-4">
+              <label for="location">
+                <h5 class="job-field">Job location</h5> <span id="required-field">*</span>
+              </label>
+              <input type="text" class="form-control" id="location" name="location" placeholder="Enter Job location" style="width:100%" required>
+          </div>
+
+          <!--About the Project-->
+          <div class="form-group mb-4">
+              <label for="job-descript"><h5 class="job-field">
+                  Job description</h5> 
+                  <span id="required-field">*</span>
+              </label>
+              <textarea class="form-control" name="job-descript" id="job-descript" rows="3" placeholder="Enter job details" required ></textarea>
+          </div>
+        <hr>
+
+        <!--Submit buttons-->
+        <div>
+              <button type="button cancel" class="btn btn-warning btn-md"><b>Cancel</b></button>
+              <button type="button submit" class="btn btn-success btn-md"><b>Post Job</b></button>
+              
+        </div>
+      </form>
+    </div>
+
+  
+
+</body>
+</html>

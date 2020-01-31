@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<!--Showcase-->
+<section id="showcase-inner" class="py-5 ">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-md-12">
+          <h1 class="display-4">Job Search Made Easy</h1>
+          <p class="lead">Helping you achieve success in your career</p>
+        </div>
+      </div>
+    </div>
+</section>
+
+
+<!--Branding-->
+<section>
+    <div class="about_4">
+            <h3> Top companies</h3>
+            <i class="fab fa-amazon fa-4x"></i>
+            <i class="fab fa-cc-amex fa-4x"></i>
+            <i class="fab fa-dropbox fa-4x"></i>
+            <i class="fab fa-windows fa-4x"></i>
+            <i class="fab fa-amazon-pay fa-4x"></i>
+            <i class="fab fa-audible fa-4x"></i>
+            <i class="fab fa-aws fa-4x"></i>
+            <i class="fab fa-cc-paypal fa-4x"></i>
+            <i class="fab fa-cc-stripe
+            fa-4x"></i>
+            <i class="fab fa-cc-visa fa-4x"></i>
+    </div>
+</section>
+
+<!--Testimonials-->
+<div class="testimonial">
+    <h2 class="display-4 mt-5">
+    <i class="fas fa-heart" style="color:red;"></i>
+        Hear it from our candidates</h2>
+
+    <!--Testimonial 1-->
+    <div class="testimonial-container">
+        <div >
+        <span><i class="fas fa-quote-left fa-2x mr-1"></i></span>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut quae accusamus officia est voluptatem, omnis odio quas consequatur mollitia, minima vitae dolorem veniam provident asperiores laborum repudiandae impedit rem voluptas!
+        </div>
+        <div class="mt-4">
+            <img src="{% static 'Images/kyle.jpg' %}" alt="">
+            <h5 class="mt-2">Kyle Brown</h5>
+            <h6>Software Engineer, Microsoft</h6>
+        </div>
+    </div>
+
+   <!--Testimonial 2-->
+    <div class="testimonial-container">
+
+        <div >
+        <span><i class="fas fa-quote-left fa-2x mr-1"></i></span>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut quae accusamus officia est voluptatem, omnis odio quas consequatur mollitia, minima vitae dolorem veniam provident asperiores laborum repudiandae impedit rem voluptas!
+        </div>
+        <div class="mt-4">
+            <img src="{% static 'Images/jenny.jpg' %}" alt="">
+            <h5 class="mt-2">Jenny Jhonson</h5>
+            <h6>Software Engineer, PayPal</h6>
+        </div>
+    </div>
+
+    <!--Testimonial 3-->
+    <div class="testimonial-container">
+        <div >
+        <span><i class="fas fa-quote-left fa-2x mr-1"></i></span>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut quae accusamus officia est voluptatem, omnis odio quas consequatur mollitia, minima vitae dolorem veniam provident asperiores laborum repudiandae impedit rem voluptas!
+        </div>
+        <div class="mt-4">
+            <img src="{% static 'Images/mark.jpg' %}" alt="">
+            <h5 class="mt-2">Mark Anthony</h5>
+            <h6>DevOps Engineer, Netflix</h6>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}
+
+

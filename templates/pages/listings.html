@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- Available Listings -->
+<div class="container col-md-8 mt-3">
+    <div class="card-container mb-5">
+
+        <div class="card-head">
+            <h5 style="display:inline-block">Job Listings</h5>
+        </div>
+
+        <hr style="padding:0px;margin:0px;">
+
+        {% if jobs %}
+            {% for job in jobs %}
+        <!--job card box-->
+        <div class="job-card">
+          <div class="row">
+            <div class="col-sm-6 job-item">
+              <h6>Job Role : </h6>
+              <h6>{{ job.title }}</h6> 
+            </div>
+
+            <div class="col-sm-6 job-item">
+              <h6>Company : </h6>
+              <h6>{{ job.company }}</h6> 
+            </div>
+          </div>
+
+          <div class="row">
+              <div class="col-sm-6">
+                  <h6>Salary : {{ job.salary }}</h6>
+              </div>
+              <div class="col-sm-6">
+                  <h6>Location : {{ job.location }}</h6>
+              </div>
+          </div>
+
+          <!--Job Description-->
+          <div>
+              <h6>Job Description : </h6>
+            <p>{{ job.description }}</p>
+          </div>
+
+          <hr>
+
+          <div class="job-card-button">
+            <a href="###" type="button" class="btn btn-primary btn-sm" >Apply
+            </a>
+          </div>
+        </div>
+            {% endfor %}
+        {% else %}
+        <center><h5 class="display-4">No Projects here!</h5></center>
+        {% endif %}
+
+    </div>
+</div>
+
+
+{% endblock %}

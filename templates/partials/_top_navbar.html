@@ -1,0 +1,76 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="{% url 'index' %}"
+        {% if 'recruiter' in request.path %}
+          style="display: none;"
+        {% endif %}
+      >
+        JobLagao
+      </a>
+     
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <ul class="navbar-nav">
+          <li class="nav-item active mr-3">
+            <a class="nav-link" href="{% url 'listings' %}"
+            {% if 'recruiter' in request.path %}
+              style="display: none;"
+            {% endif %}
+            >Listings</a>
+          </li>
+        </ul>
+
+        {% if user.is_authenticated %}
+        <ul class="navbar-nav ml-auto">
+            <!--WElcome user -->
+            <li class="nav-item mr-3 ">
+                <a class="nav-link active" href="###">
+                Welcome {{user.first_name}} {{user.last_name}}</a>
+            </li>
+
+            {% if 'recruiter' in request.path %}
+            <li class="nav-item mr-3 ">
+              <a class="nav-link active" href="{% url 'recruiter_dashboard' %}">
+              Dashboard</a>
+            </li>
+            {% endif %}
+
+            <!--Option for logout -->
+            <li class="nav-item mr-3">
+                <a href="javascript:{document.getElementById('logout').submit()}" class="nav-link">
+                  <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
+                <form action="{% url 'logout' %}" method="POST" id="logout">
+                  {% csrf_token %}
+                  <input type="hidden">
+                </form>
+            </li>
+
+          </ul>
+
+        {% else %}
+        <!--Options for Non-logged user-->
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item mr-3">
+            <a class="nav-link" href="{% url 'register' %}">
+              <i class="fas fa-user-plus"></i> SignUp</a>
+          </li>
+          <li class="nav-item mr-3">
+            <a class="nav-link" href="{% url 'login' %}">
+              <i class="fas fa-sign-in-alt"></i>
+              Login</a>
+          </li>
+          <li class="nav-item active mr-3">
+            <a class="nav-link" href="{% url 'recruiter_login' %}">
+              <i class="fas fa-sign-in-alt"></i>
+              For Recruiter</a>
+          </li>
+        </ul>
+
+        {% endif %}
+
+      </div>
+    </div>
+  </nav>

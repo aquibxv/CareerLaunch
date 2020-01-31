@@ -1,0 +1,45 @@
+div#body {
+	width: 50%;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	padding-bottom: 30px;
+}
+
+div.container {
+    background: #fff;
+    z-index: 1;
+}
+
+div.job-head-section {
+    padding:0px 30px;
+    margin: 0px;
+}
+
+form.job-form {
+    padding:0px 30px;
+}
+
+div.form-group  h5.job-field{
+    display: inline;
+}
+
+.form-control:focus {
+      border-color: lightblue;
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px blue;
+}
+
+select.select-input:focus {
+  border-color: rgb(0, 230, 0);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(0, 230, 0, 0.8);
+}
+
+div.back-box span.back-btn{
+	padding:5px 8px;
+	margin-bottom: 10px;
+	display: inline-block;
+}
+
+span#required-field{
+  display: inline;
+  color: red;
+}

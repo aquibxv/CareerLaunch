@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JObLagao | Home</title>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	
+	<!--Font Awesome-->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="{% static 'CSS/bootstrap.css' %}">
+	<!--JQuery-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<!--Stylesheet-->
+	<link rel="stylesheet" type="text/css" href="{% static 'CSS/index_stylesheet.css' %}">
+
+</head>
+<body>
+	
+	<!--Top Navbar -->
+	{% include 'partials/_top_navbar.html' %}
+
+	{% block content %}
+
+    {% endblock %}
+
+	<!--Footer-->
+	<footer id="main-footer" class="py-3 bg-primary text-white text-center">
+	   Copyright &copy;
+	   <span class="year"></span> JobLagao 2020
+	</footer>	
+
+</body>
+
+<!--Script for timeout of messages-->
+<script>
+    $(document).ready(function(){
+		window.setTimeout(function() {
+		$(".alert").fadeTo(500, 0).slideUp(500, function(){
+			$(this).remove();
+		});
+		}, 5000);
+ 	})
+</script>
+</html>
