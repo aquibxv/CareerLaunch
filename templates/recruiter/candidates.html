@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Applicants {% endblock %}
+
+{% block content %}
+
+    <!--Post a job button-->
+  	<div class="container mt-5">
+		<a class="btn btn-sm btn-light mb-3" href="{% url 'recruiter_dashboard' %}">Back</a>
+  	  <h2>Applied Candidates for {{ job.title }},  {{job.company}}</h2>
+  	   <hr>
+	</div>
+
+	<!--Candidates List-->
+	<section id="dashboard" class="py-4">
+	    <div class="container">
+	      <div class="row">
+	        <div class="col-md-12">
+              {% if applications %}
+			  <table class="table">
+			  	<thead>
+					<tr>
+						<th scope="col">First Name</th>
+						<th scope="col">Last Name</th>
+						<th scope="col">email</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+				{% for application in applications %}
+					<tr>
+						<td>{{ application.candidate.first_name }}</td>
+						<td>{{ application.candidate.last_name }}</td>
+						<td>{{ application.candidate.email }}</td>
+					</tr>
+				{% endfor %}
+					</tbody>
+				</table>
+
+				
+			  {% else %}
+				  <center><h5 class="display-4">No applicants!</h5></center>
+			  {% endif %}
+	        </div>
+	      </div>
+	    </div>
+  	</section>
+
+{% endblock %}

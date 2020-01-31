@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib import messages, auth
+from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from django.contrib.auth.models import User
-from jobs.models import Job
+from jobs.models import Job, JobApplied
 
 def index(request):
     """View for home page"""
@@ -19,7 +20,7 @@ def login(request):
         if user is not None:
             auth.login(request, user)
             messages.success(request, 'You are now logged in')
-            return redirect('listings')
+            return redirect('dashboard')
         else:
             messages.error(request, 'Invalid credentials')
             return redirect('login')
@@ -30,7 +31,6 @@ def logout(request):
     """View for candidate logout """
     if request.method == 'POST':
         auth.logout(request)
-        messages.success(request, 'You are now logged out')
         return redirect('index')
 
 def register(request):
@@ -73,9 +73,24 @@ def listings(request):
     """View for job listings"""
 
     jobs = Job.objects.order_by('-upload_date')
+    paginator = Paginator(jobs, 3)
+    page = request.GET.get('page')
+    paged_jobs = paginator.get_page(page)
 
     context = {
-        'jobs' : jobs
+        'jobs' : paged_jobs
     }
 
     return render(request, 'pages/listings.html', context)
+
+def dashboard(request):
+    """View for candidate dashboard"""
+
+    # fetch all the job the user has applied to
+    applications = JobApplied.objects.filter(candidate=request.user)
+
+    context = {
+        'applications' : applications
+    }
+
+    return render(request, 'pages/dashboard.html', context)

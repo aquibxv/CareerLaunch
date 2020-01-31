@@ -1,4 +1,5 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,10 +25,7 @@
     
     <div class="container" id="body">
       <!--Heading and block-->
-      <div class="job-head-section">
-          <div>
-              <span class="back-btn"><a href="{% url 'recruiter_dashboard'%}"><img src="Images/back.png" alt="back"></a></span>
-          </div>
+      <div class="job-head-section" >
           <h4 class="display-3" style="color: blue; font-size: 3rem;">Post a Job</h4>
           <hr/>
       </div>
@@ -81,7 +79,7 @@
 
         <!--Submit buttons-->
         <div>
-              <button type="button cancel" class="btn btn-warning btn-md"><b>Cancel</b></button>
+              <a class="btn btn-md btn-warning" href="{% url 'recruiter_dashboard' %}"><b>Cancel</b></a>
               <button type="button submit" class="btn btn-success btn-md"><b>Post Job</b></button>
               
         </div>

@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages, auth
 from django.contrib.auth.models import User
-from jobs.models import Job
+from jobs.models import Job, JobApplied
 
 # Create your views here.
 def recruiter_login(request):
@@ -100,3 +100,16 @@ def job_post(request):
     else:
         return render(request, 'recruiter/job_post.html')
     
+def candidates(request, job_id):
+    """View for listing the applied candidates for a job"""
+
+    # fetching all the applications for the specific job
+    applications = JobApplied.objects.all().filter(job_id=job_id)
+    job          = Job.objects.get(id=job_id)
+
+    context = {
+        'applications' : applications,
+        'job'          : job,
+    }
+
+    return render(request, 'recruiter/candidates.html', context)

@@ -1,5 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
+
+{% block title %} Home {% endblock %}
+
 {% block content %}
 
 <!--Showcase-->
@@ -15,9 +18,9 @@
 </section>
 
 
-<!--Branding-->
+<!--Branding
 <section>
-    <div class="about_4">
+    <div class="col-sm-12 about_4">
             <h3> Top companies</h3>
             <i class="fab fa-amazon fa-4x"></i>
             <i class="fab fa-cc-amex fa-4x"></i>
@@ -30,6 +33,22 @@
             <i class="fab fa-cc-stripe
             fa-4x"></i>
             <i class="fab fa-cc-visa fa-4x"></i>
+    </div>
+</section>
+-->
+
+<section>
+    <div class="row about_4">
+        <div class="col-sm-2"><h3> Top companies</h3></div>
+        <div class="col-sm-1"><i class="fab fa-amazon fa-4x"></i></div>
+        <div class="col-sm-1"><i class="fab fa-cc-amex fa-4x"></i></div>
+        <div class="col-sm-1"><i class="fab fa-dropbox fa-4x"></i></div>
+        <div class="col-sm-1"><i class="fab fa-windows fa-4x"></i></div>
+        <div class="col-sm-1"><i class="fab fa-amazon-pay fa-4x"></i></div>
+        <div class="col-sm-1"><i class="fab fa-audible fa-4x"></i></div>
+        <div class="col-sm-1"><i class="fab fa-aws fa-4x"></i></div>
+        <div class="col-sm-1"><i class="fab fa-cc-paypal fa-4x"></i></div>
+        <div class="col-sm-1"><i class="fab fa-cc-stripe fa-4x"></i></div>
     </div>
 </section>
 
